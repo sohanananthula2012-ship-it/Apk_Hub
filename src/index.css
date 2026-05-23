@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-terminal: 'Space Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: #080b10; color: #e2e8f0; font-family: var(--font-display); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0f1419; }
+::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 3px; }
+
+.font-display { font-family: var(--font-display); }
+.font-mono-custom { font-family: var(--font-mono); }
+.font-terminal { font-family: var(--font-terminal); }
+
+.glow-green { text-shadow: 0 0 20px rgba(0, 255, 136, 0.6); }
+.glow-blue { text-shadow: 0 0 20px rgba(0, 149, 255, 0.6); }
+
+.card-glass {
+  background: rgba(15, 20, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.code-block {
+  font-family: var(--font-mono);
+  background: #0a0e17;
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.slide-up { animation: slide-up 0.5s ease forwards; }
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0,255,136,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,136,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(0,255,136,0.3), rgba(0,149,255,0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
