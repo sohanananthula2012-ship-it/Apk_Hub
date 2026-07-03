@@ -1,74 +1,87 @@
-# React + TypeScript + Vite
+# APK Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> The community-driven Android app marketplace built by GPUC.
 
-Currently, two official plugins are available:
+## Vision
+APK Hub aims to become an open, independent marketplace for Android applications with built-in app distribution, release management, and in-app updates.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Current Architecture
 
-## React Compiler
+### Frontend
+- React + Vite
+- TypeScript
+- Dashboard and Developer Portal
+- SDK Documentation
+- Authentication System
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Backend
+- Express + TypeScript
+- SQLite (planned migration path to PostgreSQL)
+- JWT Authentication
+- APK Upload and Release Management
+- App Metadata Extraction
+- Download and Update APIs
 
-## Expanding the ESLint configuration
+### SDK
+- Kotlin SDK for in-app update checking
+- Planned staged rollouts and advanced release channels
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Project Status
+APK Hub is currently in active development by members of GPUC. The project is not production-ready and is being built openly with community contributions.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Roadmap
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Phase 1 – Foundation
+- Core marketplace
+- App publishing pipeline
+- Release management
+- Update API and SDK
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Phase 2 – Stability
+- Automated tests
+- Better APK parsing
+- API documentation
+- Environment configuration
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Phase 3 – Security
+- Email verification
+- Password reset
+- Rate limiting
+- Moderation and permissions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Phase 4 – Scale
+- PostgreSQL migration
+- Object storage
+- CDN integration
+- Analytics and telemetry
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# Apk-Hub
+### Phase 5 – Ecosystem
+- SDK enhancements
+- Public APIs
+- CLI tooling
+- Verified developers
+- Community moderation
+
+## Contributing
+We are actively looking for contributors in:
+
+- Frontend Engineering
+- Backend Engineering
+- Android Development
+- Security Engineering
+- UI/UX Design
+- Documentation
+- Testing and QA
+- DevOps
+
+## Philosophy
+APK Hub is built around three principles:
+
+1. Developer freedom.
+2. Community ownership.
+3. Open collaboration.
+
+## Join the Project
+If you believe Android developers deserve an independent, community-driven marketplace, we invite you to build APK Hub with us.
+
+**Built with ❤️ by GPUC and contributors.**
